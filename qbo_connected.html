@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Servpro QBO Connector — Connected</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#0f172a;color:#e2e8f0;margin:0}
+    .wrap{max-width:720px;margin:8vh auto;padding:32px;background:#111827;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+    h1{font-size:1.75rem;margin:0 0 6px}
+    p{line-height:1.5}
+    .muted{color:#94a3b8}
+    .card{background:#0b1220;padding:16px;border-radius:12px;margin:16px 0}
+    .btn{display:inline-block;padding:12px 18px;border-radius:10px;background:#22c55e;color:#04110a;text-decoration:none;font-weight:700}
+    code{background:#0b1220;padding:2px 6px;border-radius:6px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Connected to QuickBooks ✅</h1>
+    <p class="muted">You can close this window. The integration has been authorized successfully.</p>
+    <div class="card">
+      <p><strong>Status:</strong> Authorized.</p>
+      <p id="realm" class="muted"></p>
+    </div>
+    <a class="btn" href="#" onclick="window.close();return false;">Close Window</a>
+    <p class="muted" style="margin-top:20px">Support: <a href="mailto:it-support@servpro.com">it-support@servpro.com</a></p>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const realmId = params.get('realmId');
+    if (realmId) document.getElementById('realm').textContent = `Realm ID: ${realmId}`;
+  </script>
+</body>
+</html>
